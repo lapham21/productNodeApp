@@ -1,10 +1,6 @@
 const Product = require('../models/product.model');
 
-exports.test = function (req, res) {;
-    res.send('Greetings from the Test controller!');
-}
-
-exports.product_create = function(req, res) {
+exports.product_create = function (req, res) {
     let product = new Product(
         {
             name: req.body.name,
@@ -16,6 +12,6 @@ exports.product_create = function(req, res) {
         if (err) {
             return next(err);
         }
-        res.send('Product Created successfully');
+        res.send('Product Created successfully')
     })
-}
+};
