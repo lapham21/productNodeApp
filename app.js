@@ -7,7 +7,7 @@ let port = 1234;
 
 // database connection
 const mongoose = require('mongoose');
-let dev_db_url = 'mongodb://nlapham21:Lapham21@ds231720.mlab.com:31720/productstutorial';
+let dev_db_url = 'mongodb://producttestuser:lapham21@ds231720.mlab.com:31720/productstutorial';
 let mongoDB = process.env.MONDB_URI || dev_db_url;
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
