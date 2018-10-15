@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 
+// create routes
 const product = require('./routes/product.route');
 const app = express();
 let port = 1234;
@@ -14,10 +15,12 @@ mongoose.Promise = global.Promise;
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
+// use products
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/products', product);
 
+// setup webserver
 app.listen(port, () => {
     console.log('Server is up and running on port ' + port);
 });
